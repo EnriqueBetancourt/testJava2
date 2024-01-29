@@ -6,6 +6,8 @@ public class Menu {
         Scanner input = new Scanner(System.in);
         int opt;
         boolean access = true;
+        Person person;
+        int id = 0;
 
         while(access != false)
         {
@@ -20,6 +22,14 @@ public class Menu {
             {
                 case 1:
                     System.out.println("Register Person: ");
+                    System.out.println("Type a name: ");
+                    String name = input.nextLine();
+                    System.out.println("Type a last name: ");
+                    String lastName = input.nextLine();
+                    System.out.println("Type an age: ");
+                    int age = input.nextInt();
+                    person = new Person(++id, name, lastName, age);
+                    System.out.println("Person registered correctly");
                     break;
                 case 2:
                     System.out.println("Show people: ");
